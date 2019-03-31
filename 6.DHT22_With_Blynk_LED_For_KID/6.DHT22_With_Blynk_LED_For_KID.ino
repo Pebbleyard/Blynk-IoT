@@ -12,8 +12,8 @@ float h;
 
 
 void setup() {
-  pinMode(, OUTPUT); // กำหนดขาที่ต้องการให้ LED สว่าง
-  pinMode(, OUTPUT); // กำหนดขาที่ต้องการให้ LED สว่าง
+  pinMode(D4, OUTPUT); // กำหนดขาที่ต้องการให้ LED สว่าง
+  pinMode(D5, OUTPUT); // กำหนดขาที่ต้องการให้ LED สว่าง
   Serial.begin(9600);
   Serial.print("Connecting to ");
   Serial.println(ssid);
@@ -49,15 +49,15 @@ void loop() {
   Serial.print(t);
   Serial.println("");
   if (t < 27) {
-    digitalWrite(, LOW); // กำหนดขาที่ต้องการให้ LED ดับ
-    digitalWrite(, HIGH); // กำหนดขาที่ต้องการให้ LED สว่าง
+    digitalWrite(D4, LOW); // กำหนดขาที่ต้องการให้ LED ดับ
+    digitalWrite(D5, HIGH); // กำหนดขาที่ต้องการให้ LED สว่าง
   } else {
-    digitalWrite(, HIGH); // กำหนดขาที่ต้องการให้ LED สว่าง
-    digitalWrite(, LOW); // กำหนดขาที่ต้องการให้ LED ดับ
+    digitalWrite(D4, HIGH); // กำหนดขาที่ต้องการให้ LED สว่าง
+    digitalWrite(D5, LOW); // กำหนดขาที่ต้องการให้ LED ดับ
   }
 
   delay(100);
-  Blynk.virtualWrite(, t);  //กำหนด V ที่ต้องการให้แสดง อุณหภูมิ
-  Blynk.virtualWrite(, h); //กำหนด V ที่ต้องการให้แสดง ความชื้น
+  Blynk.virtualWrite(V10, t);  //กำหนด V ที่ต้องการให้แสดง อุณหภูมิ
+  Blynk.virtualWrite(V11, h); //กำหนด V ที่ต้องการให้แสดง ความชื้น
   delay(1000);
 }
